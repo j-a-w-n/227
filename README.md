@@ -7,6 +7,6 @@
          _Porter Scobey_
 
 ## Todo
-- [ ] Item
-- [ ] Item
-- [ ] Item
+- [ ] Get python environment geared up in Arch
+- [ ] Get PDF reader for Arch
+- [ ] Study: X
