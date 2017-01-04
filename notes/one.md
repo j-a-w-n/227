@@ -11,4 +11,4 @@ In Python, values are not strictly typed. A good example of this is in operation
 ``` 2 // 4``` evaluates to ```0```. ```2 / 4``` evaluates to ```0.5```
     // performs interger value math.     / performs float value math. 
 
-
+Print statements written without ```()``` are a sure indication the code is written in a version of Python < 3.0.
