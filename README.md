@@ -5,7 +5,7 @@
 > "The more experimentation, the better."
 
 
-      *Porter Scobey*
+*Porter Scobey*
 
 ## Todo
 - [ ] Get python environment geared up in Arch
