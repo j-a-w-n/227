@@ -8,9 +8,8 @@
 *Porter Scobey*
 
 ## Todo
-- [ ] Get python environment geared up in Arch
-- [ ] Get PDF reader for Arch
-- [ ] Study: Read PEP8 Style
+- [X] Get python environment geared up in Arch
+- [X] Get PDF reader for Arch
 
 ## Study
 - [ ] Read PEP8 Style
