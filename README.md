@@ -8,6 +8,6 @@ Python
    _Porter Scobey_
 
 ## Todo
-- [] Item
-- [] Item
-- [] Item
+- [ ] Item
+- [ ] Item
+- [ ] Item
