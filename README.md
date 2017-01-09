@@ -24,5 +24,5 @@
 - [ ] **Doublecheck** PEP8 on first few submissions
 
 ## Study
-- [X] Read PEP8 Style
-- [ ] Review 'Topic Outline' Q&As
+- [ ] **Ongoing** Read PEP8 Style
+- [X] Review 'Topic Outline' Q&As
