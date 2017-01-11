@@ -10,3 +10,4 @@ once more.
 - Self Assessments:  
 - Command line arguments, like in Jave, are all type string 
 - Python has a 'pause' function, which waits for <CR> input.
+- Read "The Beautiful Heart of Python" in chapter 1.

@@ -7,6 +7,9 @@
   - Top-level functions and Class definitions separated with 2 blank lines
     - Methods defined within a Class separated by 1 bank line
 
+## Naming Conventions
+
+
 ## Imports
   - Placed top of file, after Module comments, Docstrings and before modual globals/constants.
   - On separate lines: 
@@ -49,3 +52,27 @@
                   ```
       -Singleline: ```""" Return a fooband ... """
                    ```
+## Naming Conventions
+  ### Subscribe to pre-existing, internal conventions; however, for everything new follow these conventions:
+
+
+- *Names to Avoid*
+    Single char vars beginning with: lower case l, upper case o, upper case i.
+
+
+### Package & Modules
+
+  ``` pkg  " Short, all lwr case - "_"'s discouraged.
+      my_module_x  "Short, all lwr case - underscores allowed, when improves readability.
+  ```
+
+### Class Names
+
+  ``` ClassCapWord  " Classes are named with CapitalizedWordsInConjunction
+  ```
+
+### Exceptions
+
+  ``` ErrorExcpetionCapWord  " Same convention as Classes CapitalizedWordsInConjunction
+  ```
+

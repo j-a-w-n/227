@@ -19,10 +19,10 @@
 
 --------
 ## Todo
+- [ ] Submission ONE!
 - [X] Get python environment geared up in Arch
-- [X] Get PDF reader for Arch
 - [ ] **Doublecheck** PEP8 on first few submissions
 
 ## Study
 - [ ] **Ongoing** Read PEP8 Style
-- [X] Review 'Topic Outline' Q&As
+- [X] **Review 'Topic Outline' Q&As**
