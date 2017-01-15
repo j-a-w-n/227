@@ -19,9 +19,9 @@
 
 --------
 ## Todo
-- [ ] Submission ONE!
+- [X] Submission ONE!
 - [X] Get python environment geared up in Arch
-- [ ] **Doublecheck** PEP8 on first few submissions
+- [X] **Doublecheck** PEP8 on first few submissions
 
 ## Study
 - [ ] **Ongoing** Read PEP8 Style
