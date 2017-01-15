@@ -1,0 +1,13 @@
+C:\>python command_line_parameters.py one two 123 "Hello, world!" three
+
+Here is a complete list of command-line arguments for this run:
+command_line_parameters.py
+one
+two
+123
+Hello, world!
+three
+Program has completed and will now terminate.
+Press Enter to continue ...
+
+C:\>
