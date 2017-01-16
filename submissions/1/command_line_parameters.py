@@ -4,7 +4,7 @@ Defined a pause() function because doing submission from personal computer,
 all should be working fine.
 """
 
-import sys
+from sys import argv
 
 
 def pause():
@@ -68,7 +68,7 @@ def over_ten():
 def args_supplied():
 
     print(list)
-    for arg in sys.argv:
+    for arg in argv:
         print(arg)
     print(complete)
     pause()
@@ -76,11 +76,11 @@ def args_supplied():
 
 def commandlineargs():
 
-    if len(sys.argv) == 1:
+    if len(argv) == 1:
         no_usr_args()
-    elif len(sys.argv) > 11:
+    elif len(argv) > 11:
         over_ten()
-    elif len(sys.argv) < 12:
+    elif len(argv) < 12:
         args_supplied()
 
 
