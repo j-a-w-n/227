@@ -1,0 +1,124 @@
+
+C:\>python converter.py time 1
+
+1 seconds in hh:mm:ss format is 00:00:01.
+Press Enter to continue ...
+
+C:\>python converter.py time 15
+
+15 seconds in hh:mm:ss format is 00:00:15.
+Press Enter to continue ...
+
+C:\>python converter.py time 63
+
+63 seconds in hh:mm:ss format is 00:01:03.
+Press Enter to continue ...
+
+C:\>python converter.py time 729
+
+729 seconds in hh:mm:ss format is 00:12:09.
+Press Enter to continue ...
+
+C:\>python converter.py time 1999
+
+1999 seconds in hh:mm:ss format is 00:33:19.
+Press Enter to continue ...
+
+C:\>python converter.py time 5999
+
+5999 seconds in hh:mm:ss format is 01:39:59.
+Press Enter to continue ...
+
+C:\>python converter.py time 99999
+
+99999 seconds in hh:mm:ss format is 27:46:39.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 0
+
+0.00 degrees Fahrenheit is equivalent to -17.78 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 32
+
+32.00 degrees Fahrenheit is equivalent to 0.00 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 212
+
+212.00 degrees Fahrenheit is equivalent to 100.00 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp -40
+
+-40.00 degrees Fahrenheit is equivalent to -40.00 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 300
+
+300.00 degrees Fahrenheit is equivalent to 148.89 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp -300
+
+-300.00 degrees Fahrenheit is equivalent to -184.44 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 98.6
+
+98.60 degrees Fahrenheit is equivalent to 37.00 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp 123.4567
+
+123.46 degrees Fahrenheit is equivalent to 50.81 degrees Celsius.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp 0
+
+0.00 degrees Cesius is equivalent to 32.00 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp 100
+
+100.00 degrees Cesius is equivalent to 212.00 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp -40
+
+-40.00 degrees Cesius is equivalent to -40.00 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp 300
+
+300.00 degrees Cesius is equivalent to 572.00 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp -300
+
+-300.00 degrees Cesius is equivalent to -508.00 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp 37
+
+37.00 degrees Cesius is equivalent to 98.60 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ctemp 123.4567
+
+123.46 degrees Cesius is equivalent to 254.22 degrees Fahrenheit.
+Press Enter to continue ...
+
+C:\>python converter.py ftemp
+
+Error: Incorrect number of input values (must be exactly 2).
+Program now terminating.
+Press Enter to continue ...
+
+C:\>python converter.py temp 32
+
+Error: Bad first parameter.
+Program now terminating.
+Press Enter to continue ...
+
+C:\>

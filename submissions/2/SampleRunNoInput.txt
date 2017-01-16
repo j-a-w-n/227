@@ -1,0 +1,53 @@
+C:\>python converter.py
+
+
+
+
+
+
+
+
+
+
+                Lastname:Firstname:A00123456:csc227001
+                Submission 02
+                Converting Time or Temperature
+
+
+
+
+
+
+
+
+
+
+
+Press Enter to continue ...
+
+This program allows the user to convert either a temperature value (either
+Fahrenheit to Celsius or vice versa) or a time value given as a total number
+of seconds to the corresponding equivalent hours, minutes and seconds.
+
+Input for the program is entered on the command line, and must be entered in
+the following way:
+
+The first input parameter must be one of the following:
+time - to indicate that the next input will be a number of seconds
+ftemp - to indicate that the next input will be a Fahrenheit temperature
+ctemp - to indicate that the next input will be a Celsius temperature
+
+The number of seconds entered must be a positive integer, but a temperature
+of either kind can be a real number. The program performs the appropriate
+conversion, depending on the input data, and outputs the value entered as
+well as the converted equivalent.
+
+For any conversion to take place there must be exactly two input values, the
+first of which must be one of the three given above. If the number of inputs
+is not two, or if the first is not one of the required ones, an appropriate
+message is output and the program terminates. No error checking is performed
+on the second input value, which must be an appropriate numerical value.
+
+Press Enter to continue ...
+
+C:\>
