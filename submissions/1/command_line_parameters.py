@@ -1,4 +1,7 @@
 # command_line_parameters.py
+# Kyle:Connolly:A00371085:csc227107
+# Submission 01
+# Accessing Command-Line Parameters
 """
 Defined a pause() function because doing submission from personal computer,
 all should be working fine.

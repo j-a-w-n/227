@@ -1,4 +1,7 @@
 # converter.py
+# Kyle:Connolly:A00371085:csc227107
+# Submission 02
+# Converting Time or Temperatre
 
 """
 Defined a pause() function because doing submission from personal computer,

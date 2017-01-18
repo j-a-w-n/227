@@ -14,5 +14,6 @@ s.capitalize()
 
 >>> 'Text, text, text.'
 ```
-  - there are a number of `isxyz()` string methods, which return a bool value
+- there are a number of `isxyz()` string methods, which return a bool value
 - `print(x, end=" ")` the print stmt has an implicit `end=` parameter, which is `\n` by default, by explicitly stating an alternative, we can print different results.
+- `list` is a keyword - I used it as a var name is sub. 1. Refrain from using keywords as var names!! 
