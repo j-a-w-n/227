@@ -6,5 +6,12 @@
 - `[x:y]` slices a string with x beginning at char @ position, y ending but not including position (within string's index)
 - Page 73 has a table of string methods.
   `"some string with string value".strmethod()`
-  The var, or literal string must be appended with the string method. No arguments.
+  The var, or literal string must be appended with the string method. 
+- For example ```python
+              s = "text, text, text."
+              s.capitalize()
 
+              >>> 'Text, text, text.'
+              ```
+- 
+              
