@@ -7,12 +7,12 @@
 - Page 73 has a table of string methods.
   `"some string with string value".strmethod()`
   The var, or literal string must be appended with the string method. 
-- For example 
+  - For example 
 ```python
 s = "text, text, text."
 s.capitalize()
 
 >>> 'Text, text, text.'
 ```
-- 
-              
+  - there are a number of `isxyz()` string methods, which return a bool value
+- `print(x, end=" ")` the print stmt has an implicit `end=` parameter, which is `\n` by default, by explicitly stating an alternative, we can print different results.
