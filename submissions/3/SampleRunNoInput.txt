@@ -1,0 +1,53 @@
+C:\>python solve_quadratics.py
+
+
+
+
+
+
+
+
+
+
+                Lastname:Firstname:A00123456:csc227001
+                Submission 03
+                Solving Quadratic Equations
+
+
+
+
+
+
+
+
+
+
+
+Press Enter to continue ...
+
+This program solves quadratic equations, one equation per run, if the
+equation is in fact solvable (has real roots).
+
+If not, the program simply reports that the equation cannot be solved,
+pauses, and then terminates when the user presses Enter.
+
+The coefficients of the standard quadratic equation
+
+ax**2 + bx + c = 0
+
+are entered on the command line in the order a, b, c. If nothing is entered
+on the command line, an opening identification screen is displayed first,
+followed by a screen containing this information. Each screen has a pause at
+the end to allow the user to read it.
+
+If one or more values are entered, the program checks to make sure that
+there are exactly three, and reports an error if that is not the case.
+If there are three values, they are all assumed to be real numbers, and
+no further error checking is performed. If the entered values do correspond
+to a solvable quadratic equation, the two roots of the equation are computed
+and displayed. Depending on the coefficients, the roots may, of course, be
+identical. In any case, a pause again precedes program termination.
+
+Press Enter to continue ...
+
+C:\>
