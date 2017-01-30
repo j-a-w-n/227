@@ -19,9 +19,9 @@
 
 --------
 ## Todo
-- [ ] Submission two!
+- [ ] Submission four!
 - [X] **Doublecheck** PEP8 on first few submissions
 
 ## Study
 - [X] **Review 'Topic Outline' Q&As**
-- [ ] **Ongoing** Read PEP8 Style
+- [ ] **Study up on `%`operator**

@@ -1,4 +1,27 @@
 # rainfall.py
+# Kyle:Connolly:A00371085:csc227107
+# Submission 04
+# Retrieving and Processing Rainfall Data
+
+
+from sys import argv
+from os import system
+
+
+def clear():
+    system("cls")
+
+
+def pause():
+    input("Press Enter to continue ... ")
+
+
+info = """\n \n
+                  Kyle:Connolly:A00371085:csc227017\n
+                  Submission 04\n
+                  Retrieving and Processing Rainfall Data\n
+          \n \n
+       """
 
 desc = """
 This program opens a file of text containing rainfall data for any number of
@@ -24,3 +47,25 @@ lowest rainfall amounts. If no data exists for the year entered, a message to
 that effect is output. The data for any number of years may be processed on a
 single run.
 """
+
+
+def no_input():
+    print(info)
+    pause()
+    print(desc)
+    pause()
+
+
+def rainfall():
+    if len(argv) == 1:
+        no_input()
+    elif len(argv) == 2:
+        pass
+
+
+rainfall()
+
+# readline to see if year exists
+# if it does the next line is rain data
+# split that string (line) into a list of its numbers
+# print them back out to the console
