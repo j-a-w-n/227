@@ -10,4 +10,4 @@
 ###We can manipulate lists with similar methods as string objects
   - `list`s are mutable, we can change their values and indexes
   - `tuple`s are immutable, we *cannot* change their values and indexes
-  - Both `set` and `list` are non-sequential, they are hashed and therefore *cannot* be accessed by `[]` + an index value 
+  - Both `set` and `list` are non-sequential but **mutable**, they are hashed and therefore *cannot* be accessed by `[]` + an index value 
