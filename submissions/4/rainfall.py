@@ -58,6 +58,7 @@ def no_input():
 
 def input():
     fo = open(argv[1])
+    fo = fo.readline()
 
 
 

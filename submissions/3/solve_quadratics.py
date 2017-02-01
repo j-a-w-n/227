@@ -78,7 +78,7 @@ def formula():
     d = (b**2) - (4*a*c)
     if d < 0:
         no_roots = """
-Warning: The quadratic equation {0:g}x**2+{0:g}x+{0:g} = 0 has no roots.
+Warning: The quadratic equation {0:g}x**2+{1:g}x+{2:g} = 0 has no roots.
 Program now terminating.\
 """.format(a, b, c)
         print(no_roots)
@@ -94,8 +94,8 @@ Program now terminating.\
             print(same_root)
         else:
             roots = """
-The quadratic equation {0:g}x**2+{0:g}x+{0:g} = 0 has the two roots \
-{0:0} and {0:0}.
+The quadratic equation {0:g}x**2+{1:g}x+{2:g} = 0 has the two roots \
+{3:0} and {4:0}.
 Program now terminating.\
             """.format(a, b, c, r1, r2)
             print(roots)
