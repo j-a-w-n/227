@@ -1,5 +1,4 @@
 # unique_names_in_order.py
-
 from sys import argv
 
 programmer = """
@@ -10,8 +9,9 @@ names_in = []
 
 for name in argv[1:len(argv)]:
     names_in.append(name)
-    names_in.sort()
 
-unique_order = set(names_in)
-for name in unique_order:
+unique = set(names_in)
+order = list(unique)
+order.sort()
+for name in order:
     print(name, end="\n")
