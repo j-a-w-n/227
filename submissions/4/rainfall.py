@@ -56,6 +56,11 @@ def no_input():
     pause()
 
 
+def input():
+    fo = open(argv[1])
+
+
+
 def rainfall():
     if len(argv) == 1:
         no_input()
