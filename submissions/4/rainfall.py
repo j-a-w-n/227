@@ -9,18 +9,18 @@ from os import system
 
 
 def clear():
-    system("cls")
+    system("clear")
 
 
 def pause():
     input("Press Enter to continue ... ")
 
 
-info = """\n \n
-                  Kyle:Connolly:A00371085:csc227017\n
-                  Submission 04\n
-                  Retrieving and Processing Rainfall Data\n
-          \n \n
+info = """\n \n \n \n \n
+                  Kyle:Connolly:A00371085:csc227017
+                  Submission 04
+                  Retrieving and Processing Rainfall Data
+          \n \n \n \n \n
        """
 
 desc = """
@@ -56,21 +56,28 @@ def no_input():
     pause()
 
 
-def input():
-    fo = open(argv[1])
-    fo = fo.readline()
+def rain_summary():
+    print("works")
 
+
+def user_input():
+    clear()
+    infile_name = argv[1]
+    open(infile_name)
+    year = input("Enter year for which you want rainfall data: ")
+    for i in infile_name.readline():
+        if year == i:
+            rain_summary()
 
 
 def rainfall():
     if len(argv) == 1:
         no_input()
     elif len(argv) == 2:
-        pass
+        user_input()
 
 
 rainfall()
-
 # readline to see if year exists
 # if it does the next line is rain data
 # split that string (line) into a list of its numbers

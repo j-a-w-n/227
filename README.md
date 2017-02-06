@@ -1,6 +1,5 @@
-#January - April, 2017
-##Porter Scobey - CSCI 1227
-###Python
+#Porter Scobey - CSCI 1227
+##Python
 -------
 > "The more experimentation, the better"
 
@@ -19,9 +18,11 @@
 
 --------
 ## Todo
-- [ ] Submission four!
 - [X] **Doublecheck** PEP8 on first few submissions
+- [] **find a tutor**
 
 ## Study
 - [X] **Review 'Topic Outline' Q&As**
 - [ ] **Study up on `%`operator**
+- [ ] *study* `while_file#.py` for midterm
+  - Midterm on Wed. March, 1st.
