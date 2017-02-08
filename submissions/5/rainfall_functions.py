@@ -1,8 +1,10 @@
-# rainfall.py
+# rainfall_functions.py
 # Kyle:Connolly:A00371085:csc227107
-# Submission 04
+# Submission 05
 # Retrieving and Processing Rainfall Data
-
+"""
+Self-assesment
+"""
 
 from sys import argv
 from os import system
@@ -18,7 +20,7 @@ def pause():
 
 info = """\n \n \n \n \n
                   Kyle:Connolly:A00371085:csc227017
-                  Submission 04
+                  Submission 05
                   Retrieving and Processing Rainfall Data
           \n \n \n \n \n
        """
@@ -55,29 +57,3 @@ def no_input():
     print(desc)
     pause()
 
-
-def rain_summary():
-    print("works")
-
-
-def user_input():
-    clear()
-    infile_name = open(argv[1])
-    year = input("Enter year for which you want rainfall data: ")
-    for i in infile_name.readline():
-        if year == i:
-            rain_summary()
-
-
-def rainfall():
-    if len(argv) == 1:
-        no_input()
-    elif len(argv) == 2:
-        user_input()
-
-
-rainfall()
-# readline to see if year exists
-# if it does the next line is rain data
-# split that string (line) into a list of its numbers
-# print them back out to the console

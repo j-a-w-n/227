@@ -6,6 +6,10 @@
 
 *Porter Scobey*
 
+> "**What** is a great question to ask before *how*"
+
+
+*Porter Scobey*
 > "...code is read much more than it is written"
 
 
