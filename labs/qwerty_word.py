@@ -7,19 +7,25 @@ Programmed by Kyle Connolly\
 """
 print(programmer)
 
-qwerty = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]
+qwerty = ("q", "w", "e", "r", "t", "y", "u", "i", "o", "p")
 word_given = argv[1]
 word_checked = word_given.lower()
 is_not = "{} is not a Qwerty word.".format(word_given)
 is_so = "{} is a Qwerty word.".format(word_given)
 
-for i in word_checked:
-    word = True
-    if i == qwerty:
-        pass
+
+def test():
+    for i in word_checked:
+        word = True
+        if i in qwerty:
+            continue
+        else:
+            word = False
+            break
+    if word is True:
+        print(is_so)
     else:
-        word = False
-if word is True:
-    print(is_so)
-else:
-    print(is_not)
+        print(is_not)
+
+
+test()
