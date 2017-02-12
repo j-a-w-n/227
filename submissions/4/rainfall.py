@@ -49,6 +49,26 @@ single run.
 """
 
 
+def title():
+    print("\n===== Rainfall Summary for {}".format(year))
+
+
+def grid():
+    rain_string = list(rain_line.split())
+    rain_float = []
+    for item in rain_string:
+        rain_float.append(float(item))
+    months = """\
+    January..... {}  July........ {}
+    February.... {}  August...... {}
+    March....... {}  September... {}
+    April....... {}  October..... {}
+    May......... {}  November.... {}
+    June........ {}  December.... {}
+    """.format(item in rain_float)
+    print(months)
+
+
 def no_input():
     print(info)
     pause()
@@ -56,17 +76,35 @@ def no_input():
     pause()
 
 
-def rain_summary():
-    print("works")
-
-
 def user_input():
-    clear()
-    infile_name = open(argv[1])
-    year = input("Enter year for which you want rainfall data: ")
-    for i in infile_name.readline():
-        if year == i:
-            rain_summary()
+    while True:
+        clear()
+        global infile
+        infile = open(argv[1])
+        global year
+        year = input("\nEnter year for which you want rainfall data: ")
+        current_line = infile.readline().strip()
+        match = False
+        for line in infile:
+            if year == current_line:
+                global rain_line
+                rain_line = infile.readline()
+                title()
+                grid()
+                match = True
+                break
+            else:
+                current_line = infile.readline()
+                continue
+        if match:
+            break
+        elif not match:
+            print("\nNo rainfall data found for year {}.".format(year))
+            repeat = input("\nDo it again for another year? [[y]/n] ")
+            if repeat == "n":
+                break
+            else:
+                continue
 
 
 def rainfall():
@@ -77,7 +115,3 @@ def rainfall():
 
 
 rainfall()
-# readline to see if year exists
-# if it does the next line is rain data
-# split that string (line) into a list of its numbers
-# print them back out to the console
