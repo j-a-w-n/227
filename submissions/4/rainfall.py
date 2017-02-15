@@ -2,14 +2,35 @@
 # Kyle:Connolly:A00371085:csc227107
 # Submission 04
 # Retrieving and Processing Rainfall Data
+"""
 
+I don't know how I managed, but I think I've got this assignment figured out,
 
-from sys import argv
+I know this is two weeks late, but I would love it if you could point some-
+things out from this code.
+"""
+
+from sys import argv, exit
 from os import system
 
 
 def clear():
     system("clear")
+
+
+def ok():
+    print("OK ... Program now terminating.")
+
+
+def repeat():
+    ask = input("\nDo it again for another year? [[y]/n] ")
+    if ask == "n":
+        print()
+        ok()
+        pause()
+        exit()
+    else:
+        user_input()
 
 
 def pause():
@@ -47,26 +68,9 @@ lowest rainfall amounts. If no data exists for the year entered, a message to
 that effect is output. The data for any number of years may be processed on a
 single run.
 """
-
-
-def title():
-    print("\n===== Rainfall Summary for {}".format(year))
-
-
-def grid():
-    rain_string = list(rain_line.split())
-    rain_float = []
-    for item in rain_string:
-        rain_float.append(float(item))
-    months = """\
-    January..... {}  July........ {}
-    February.... {}  August...... {}
-    March....... {}  September... {}
-    April....... {}  October..... {}
-    May......... {}  November.... {}
-    June........ {}  December.... {}
-    """.format(item in rain_float)
-    print(months)
+month = ["January", "February", "March", "April", "May", "June",
+         "July", "August", "September", "October", "November",
+         "December"]
 
 
 def no_input():
@@ -76,35 +80,56 @@ def no_input():
     pause()
 
 
+def title():
+    print("\n===== Rainfall Summary for {}".format(year))
+
+
+def month_stats():
+    global rain_line
+    rain_float = [float(n) for n in rain_line.split()]
+    months = """\
+January..... {0}  July........ {6}
+February.... {1}  August...... {7}
+March....... {2}  September... {8}
+April....... {3}  October..... {9}
+May......... {4}  November.... {10}
+June........ {5}  December.... {11}\
+    """.format(*rain_float)
+    total = sum(rain_float)
+    avg = total / 12
+    high = month[rain_float.index(max(rain_float))]
+    low = month[rain_float.index(min(rain_float))]
+    calc = [total, avg, high, low]
+    stats = """\
+===== Total rainfall for the year... {:.1f}
+===== Average monthly rainfall...... {:.1f}
+===== Month with highest rainfall... {}
+===== Month with lowest rainfall.... {}\
+    """.format(*calc)
+    print(months)
+    print(stats)
+    pause()
+    repeat()
+
+
 def user_input():
+    clear()
+    global infile
+    infile = open(argv[1])
+    global year
+    year = input("\nEnter year for which you want rainfall data: ")
     while True:
-        clear()
-        global infile
-        infile = open(argv[1])
-        global year
-        year = input("\nEnter year for which you want rainfall data: ")
         current_line = infile.readline().strip()
-        match = False
-        for line in infile:
-            if year == current_line:
-                global rain_line
-                rain_line = infile.readline()
-                title()
-                grid()
-                match = True
-                break
-            else:
-                current_line = infile.readline()
-                continue
-        if match:
+        if year == current_line:
+            global rain_line
+            rain_line = infile.readline().strip()
+            title()
+            month_stats()
             break
-        elif not match:
+        if not current_line and current_line != year:
             print("\nNo rainfall data found for year {}.".format(year))
-            repeat = input("\nDo it again for another year? [[y]/n] ")
-            if repeat == "n":
-                break
-            else:
-                continue
+            pause()
+            repeat()
 
 
 def rainfall():
