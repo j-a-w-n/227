@@ -8,24 +8,49 @@ Self-assesment
 
 from sys import argv
 from os import system
+from subprocess import call
+
+
+def os_test():
+    os = system()
+    if os == 'Linux' or 'Mac':
+        call('clear', shell=True)
+    elif os == 'Windows':
+        call('cls', shell=True)
 
 
 def clear():
     system("clear")
 
 
+def ok():
+    print("OK ... Program now terminating.")
+
+
+def repeat():
+    ask = input("\nDo it again for another year? [[y]/n] ")
+    if ask == "n":
+        print()
+        ok()
+        pause()
+        exit()
+    else:
+        f = open(argv[1])
+        process_rainfall_file(f)
+
+
 def pause():
     input("Press Enter to continue ... ")
 
 
-info = """\n \n \n \n \n
+opening = """\n \n \n \n \n
                   Kyle:Connolly:A00371085:csc227017
                   Submission 05
                   Retrieving and Processing Rainfall Data
           \n \n \n \n \n
        """
 
-desc = """
+info = """
 This program opens a file of text containing rainfall data for any number of
 years. The data for any year is contained on two lines of the file. The first
 of those two lines contains just the year, while the second line contains 12
@@ -50,10 +75,71 @@ that effect is output. The data for any number of years may be processed on a
 single run.
 """
 
+month = ["January", "February", "March", "April", "May", "June",
+         "July", "August", "September", "October", "November",
+         "December"]
 
-def no_input():
+
+def display_opening_screen():
+    """Prints the title screen: who's programmed it and their creds and
+    pauses for user-input."""
+    print(opening)
+    pause()
+
+
+def display_program_info():
+    "Prints the program info / description and pauses for user-input."
     print(info)
     pause()
-    print(desc)
-    pause()
 
+
+def title():
+    print("\n===== Rainfall Summary for {}".format(year))
+
+
+def month_stats():
+    global rain_line
+    rain_float = [float(n) for n in rain_line.split()]
+    months = """\
+January..... {0}  July........ {6}
+February.... {1}  August...... {7}
+March....... {2}  September... {8}
+April....... {3}  October..... {9}
+May......... {4}  November.... {10}
+June........ {5}  December.... {11}\
+    """.format(*rain_float)
+    total = sum(rain_float)
+    avg = total / 12
+    high = month[rain_float.index(max(rain_float))]
+    low = month[rain_float.index(min(rain_float))]
+    calc = [total, avg, high, low]
+    stats = """\
+===== Total rainfall for the year... {:.1f}
+===== Average monthly rainfall...... {:.1f}
+===== Month with highest rainfall... {}
+===== Month with lowest rainfall.... {}\
+    """.format(*calc)
+    print(months)
+    print(stats)
+    pause()
+    repeat()
+
+
+def process_rainfall_file(f):
+    clear()
+    global infile
+    infile = f
+    global year
+    year = input("\nEnter year for which you want rainfall data: ")
+    while True:
+        current_line = infile.readline().strip()
+        if year == current_line:
+            global rain_line
+            rain_line = infile.readline().strip()
+            title()
+            month_stats()
+            break
+        if not current_line and current_line != year:
+            print("\nNo rainfall data found for year {}.".format(year))
+            pause()
+            repeat()
