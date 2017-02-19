@@ -75,9 +75,9 @@ that effect is output. The data for any number of years may be processed on a
 single run.
 """
 
-month = ["January", "February", "March", "April", "May", "June",
-         "July", "August", "September", "October", "November",
-         "December"]
+MONTHS = ["January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November",
+          "December"]
 
 
 def display_opening_screen():
@@ -110,8 +110,8 @@ June........ {5}  December.... {11}\
     """.format(*rain_float)
     total = sum(rain_float)
     avg = total / 12
-    high = month[rain_float.index(max(rain_float))]
-    low = month[rain_float.index(min(rain_float))]
+    high = MONTHS[rain_float.index(max(rain_float))]
+    low = MONTHS[rain_float.index(min(rain_float))]
     calc = [total, avg, high, low]
     stats = """\
 ===== Total rainfall for the year... {:.1f}

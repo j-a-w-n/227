@@ -85,7 +85,6 @@ def title():
 
 
 def month_stats():
-    global rain_line
     rain_float = [float(n) for n in rain_line.split()]
     months = """\
 January..... {0}  July........ {6}
