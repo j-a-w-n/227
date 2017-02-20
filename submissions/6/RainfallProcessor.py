@@ -20,14 +20,23 @@ class RainfallProcessor(object):
     def __init__(self, rainfall_file):
         self.rainfall_file = rainfall_file
 
-    from sys import argv, exit, platform
-    from os import system
+    from sys import exit as exit
+    from sys import platform as platform
+    from os import system as system
 
     MONTHS = ["January", "February", "March", "April", "May", "June",
               "July", "August", "September", "October", "November",
               "December"]
 
     def process_rainfall_file(self):
+        """This function is called from the driver to run the program and
+        populate data, if any.
+
+        Handles context of the class instance's text file object, taking
+        care of setup and teardown logic. Creates global obj `year` and
+        `rain_line` used in helper method title() and month_stats().
+        """
+
         self.clear()
         global year
         year = input("\nEnter year for which you want rainfall data: ")
@@ -36,7 +45,7 @@ class RainfallProcessor(object):
                 current_line = infile.readline().strip()
                 if year == current_line:
                     global rain_line
-                    rain_line = infile.readline().strip()
+                    rain_line = infile.readline().split()
                     self.title()
                     self.month_stats()
                     break
@@ -46,8 +55,11 @@ class RainfallProcessor(object):
                     self.repeat()
 
     def month_stats(self):
-        global rain_line
-        rain_float = [float(n) for n in rain_line.split()]
+        """Responsible for outputting rainfall data, if available for the
+        user's supplied year.
+        """
+
+        rain_float = [float(n) for n in rain_line]
         months = """\
 January..... {0}  July........ {6}
 February.... {1}  August...... {7}
@@ -72,16 +84,31 @@ June........ {5}  December.... {11}\
         self.pause()
         self.repeat()
 
+    def title(self):
+        "Prints the heading for rainfall data of user's supplied year."
+
+        print("\n===== Rainfall Summary for {}".format(year))
+
     def clear(self):
+        """Calls appropriate shell command, depending on user's
+        operating system.
+        """
+
         if self.platform.lower() is 'linux' or 'darwin':
             self.system("clear")
         elif self.platform.lower() is 'windows':
             self.system("cls")
 
     def ok(self):
+        "Outputs message to user program will terminate."
+
         print("OK ... Program now terminating.")
 
     def repeat(self):
+        """Prompts user whether or not they'd like to find data for another
+        year, either calls process_rainfall_file() again or
+        terminates program."""
+
         ask = input("\nDo it again for another year? [[y]/n] ")
         if ask == "n":
             print()
@@ -92,8 +119,6 @@ June........ {5}  December.... {11}\
             self.process_rainfall_file()
 
     def pause(self):
-        input("Press Enter to continue ... ")
+        "Halts program untill user provides stdin from keyboard."
 
-    def title(self):
-        "Prints the heading for rainfall data."
-        print("\n===== Rainfall Summary for {}".format(year))
+        input("Press Enter to continue ... ")
