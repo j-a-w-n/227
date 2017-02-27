@@ -43,15 +43,19 @@ single run.
 
     def pause(self):
         "Wait for user to enter std.input before continuing"
+
         input("Press Enter to continue ... ")
 
     def display_opening_screen(self):
+
         """Prints the title screen: who's programmed it and their creds and
         pauses for user-input."""
         print(self.opening)
         self.pause()
 
     def display_program_info(self):
+
         "Prints the program info / description and pauses for user-input."
         print(self.info)
         self.pause()
+

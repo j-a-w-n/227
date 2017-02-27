@@ -17,6 +17,7 @@ for me on my Linux machine, please let me know if you've had trouble with it.
 
 
 class RainfallProcessor(object):
+    """Sets up an instance with a text file associated."""
     def __init__(self, rainfall_file):
         self.rainfall_file = rainfall_file
 
@@ -24,33 +25,33 @@ class RainfallProcessor(object):
     from sys import platform as platform
     from os import system as system
 
-    MONTHS = ["January", "February", "March", "April", "May", "June",
+    MONTHS = ("January", "February", "March", "April", "May", "June",
               "July", "August", "September", "October", "November",
-              "December"]
+              "December")
 
     def process_rainfall_file(self):
         """This function is called from the driver to run the program and
         populate data, if any.
 
         Handles context of the class instance's text file object, taking
-        care of setup and teardown logic. Creates global obj `year` and
-        `rain_line` used in helper method title() and month_stats().
+        care of setup and teardown logic. Creates global obj `YEAR` and
+        `RAIN_LINE` used in helper method title() and month_stats().
         """
 
         self.clear()
-        global year
-        year = input("\nEnter year for which you want rainfall data: ")
+        global YEAR
+        YEAR = input("\nEnter year for which you want rainfall data: ")
         with open(self.rainfall_file) as infile:
-            while year:
+            while YEAR:
                 current_line = infile.readline().strip()
-                if year == current_line:
-                    global rain_line
-                    rain_line = infile.readline().split()
+                if YEAR == current_line:
+                    global RAIN_LINE
+                    RAIN_LINE = infile.readline().split()
                     self.title()
                     self.month_stats()
                     break
-                if not current_line and current_line != year:
-                    print("\nNo rainfall data found for year {}.".format(year))
+                if not current_line and current_line != YEAR:
+                    print("\nNo rainfall data found for year {}.".format(YEAR))
                     self.pause()
                     self.repeat()
 
@@ -59,7 +60,7 @@ class RainfallProcessor(object):
         user's supplied year.
         """
 
-        rain_float = [float(n) for n in rain_line]
+        rain_float = [float(n) for n in RAIN_LINE]
         months = """\
 January..... {0}  July........ {6}
 February.... {1}  August...... {7}
@@ -85,9 +86,9 @@ June........ {5}  December.... {11}\
         self.repeat()
 
     def title(self):
-        "Prints the heading for rainfall data of user's supplied year."
+        """Prints the heading for rainfall data of user's supplied year."""
 
-        print("\n===== Rainfall Summary for {}".format(year))
+        print("\n===== Rainfall Summary for {}".format(YEAR))
 
     def clear(self):
         """Calls appropriate shell command, depending on user's
@@ -122,3 +123,4 @@ June........ {5}  December.... {11}\
         "Halts program untill user provides stdin from keyboard."
 
         input("Press Enter to continue ... ")
+
