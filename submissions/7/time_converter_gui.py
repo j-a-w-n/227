@@ -13,10 +13,7 @@ import tkinter.messagebox
 from datetime import timedelta
 
 
-desc = """
- or a time value given as a total number
-of seconds to the corresponding equivalent hours, minutes and seconds.
-"""
+desc = "Time Converter for Seconds to hh:mm:ss"
 
 
 def info():
@@ -39,33 +36,43 @@ def convert():
     t = timedelta(seconds=time)
     tkinter.messagebox.showinfo(
             'Conversion Result',
-            str(int(time)) + ' seconds in hh:mm:ss format is 0' + str(t)
+            str(int(time)) + ' seconds in hh:mm:ss format is 0' + str(t) + '.'
             )
 
 
 parent = tkinter.Tk()
+field = tkinter.Frame()
+buttons = tkinter.Frame()
 
-desc_label = tkinter.Label(textvariable="desc")
-prompt_label = tkinter.Label(text='Enter a number of inches: ')
-entry = tkinter.Entry(parent, width=10)
+desc_label = tkinter.Label(text=desc)
+prompt_label = tkinter.Label(field, text='Enter a number of inches: ')
+entry = tkinter.Entry(field, width=10)
+
+desc_label.pack()
+prompt_label.pack(side='left')
+entry.pack(side='left')
 
 info_button = tkinter.Button(
+        buttons,
         text='Get Information',
         command=info)
 
 convert_button = tkinter.Button(
+        buttons,
         text='Convert Seconds',
         command=convert
         )
 
 quit_button = tkinter.Button(
-        text='quit',
+        buttons,
+        text='Quit',
         command=parent.destroy
         )
-desc_label.pack()
-prompt_label.pack()
-entry.pack()
-info_button.pack()
-convert_button.pack()
-quit_button.pack()
+info_button.pack(side='left')
+convert_button.pack(side='left')
+quit_button.pack(side='left')
+
+field.pack()
+buttons.pack()
+
 tkinter.mainloop()
