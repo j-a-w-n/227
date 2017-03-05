@@ -1,10 +1,18 @@
 # converter.py
 # Kyle:Connolly:A00371085:csc227107
-# Submission 02
-# Converting Time or Temperature
+# Submission 07
+# Converting Time GUI
 
 """
-Self-Eval.........
+I believe things are working & formatted properly, my flake8 shows me no PEP8
+errors.
+The trickiest part of this submission was adapting the pre-existing code from
+sub. 2 to work properly with the tk API, figuring out where and how I could
+print text variables and I had initiallybeen packing widgets as I created
+them.. e.g. seconds = tkinter.Entry(...).pack().This alters the behaviour of
+the widget and caused an error in trying to `.get` the value inmy convertion
+function. Turns out when a widget is packed it returns a None object.
+Lesson learned.
 """
 
 
@@ -17,21 +25,22 @@ desc = "Time Converter for Seconds to hh:mm:ss"
 
 
 def info():
-
+    """Populates a message box with programmer info and
+    brief description of the convertion."""
     tkinter.messagebox.showinfo(
             'Program Information',
             'Kyle:Connolly:A00371085:csc227017' + '\n'
             'Submission 07' + '\n'
             'Converting Time with a GUI' + '\n' + '\n'
-            'This program allows the user to convert either a temperature' +
-            ' value (eitherFahrenheit to Celsius or vice versa) or a time' +
-            ' value given as a total number of seconds to the corresponding' +
+            'This program allows the user to convert either a time value ' +
+            'value given as a total number of seconds to the corresponding' +
             ' equivalent hours, minutes and seconds.'
             )
 
 
 def convert():
-
+    """Converts the user's input from the `entry` widget
+    and prints the value in a dialogue box in proper format."""
     time = float(entry.get())
     t = timedelta(seconds=time)
     tkinter.messagebox.showinfo(
