@@ -3,19 +3,20 @@
 import pickle
 
 
-print('Programmed by Kyle Connolly')
+eof = False
+num_list = []
 
-with open('integers.dat', 'r') as bin:
-    eof = False
-    num_list = []
+with open('integers.dat', 'rb') as bin:
     while not eof:
         try:
-            num_list.append(i=pickle.load(bin))
-        except eof:
+            i = pickle.load(bin)
+            num_list.append(i)
+        except:
             eof = True
 
-print(num_list, end=' ')
-print('The maximum value is {} and the minimum value is {}.').format(
+
+print('Programmed by Kyle Connolly')
+print(num_list)
+print('The maximum value is {} and the minimum value is {}.'.format(
         max(num_list),
-        min(num_list)
-        )
+        min(num_list)))
