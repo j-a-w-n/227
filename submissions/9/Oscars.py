@@ -1,10 +1,20 @@
+# Oscars.py
+# Kyle:Connolly:A00371085:csc227107
+# Submission 09
+# Academy Awards for Best Picture
+"""
+I belive the assignment is working as expected, however; I feel I could have
+been better to handle the user's input range with an actual exception rather
+than an if statement.
+"""
 import tkinter
 import tkinter.messagebox as popup
 
 
 class Oscars():
     """
-    Creates gui and works with txt file
+    Creates GUI, has one callback function to match user's input to
+    intended year within Oscars.txt & set values displayed in the GUI.
     """
     def __init__(self):
         # Window & three frames
@@ -42,7 +52,7 @@ class Oscars():
                 )
         self.title_value = tkinter.Label(
                 self.title_frame,
-                width=30,
+                width=20,
                 textvariable=self.title
                 )
         # Widgets for genre frame
@@ -53,7 +63,7 @@ class Oscars():
                 )
         self.genre_value = tkinter.Label(
                 self.genre_frame,
-                width=30,
+                width=20,
                 textvariable=self.genre
                 )
         # Pack
@@ -76,21 +86,21 @@ class Oscars():
         """
         try:
             user_input = int(self.entry.get())
+            if (user_input > 2016 or user_input < 1928 or
+                    user_input == 2010):
+                popup.showinfo("Error",
+                               "Requested year is out of range. \n" +
+                               "It must lie in the interval 1928 to 2016.")
+            with open('Oscars.txt', 'r') as data:
+                for i, line in enumerate(data):
+                    if (user_input-1928) == i:
+                        line_info = line.split(',')
+                        self.title.set(line_info[0])
+                        self.genre.set(line_info[1])
         except ValueError:
             popup.showinfo("Error",
                            "Input value for year cannot be converted to " +
                            "an integer year.")
-
-        with open('Oscars.txt', 'r') as data:
-            for i, line in enumerate(data):
-                if (user_input-1928) == i:
-                    line_info = line.split(',')
-                    self.title.set(line_info[0])
-                    self.genre.set(line_info[1])
-            if user_input > 2016 or user_input < 1928:
-                popup.showinfo("Error",
-                               "Requested year is out of range. \n" +
-                               "It must lie in the interval 1928 to 2016.")
 
 
 app = Oscars()
